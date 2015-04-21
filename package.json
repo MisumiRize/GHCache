@@ -1,0 +1,17 @@
+{
+  "name": "gh-cache",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rize MISUMI",
+  "license": "MIT",
+  "dependencies": {
+    "coffee-script": "^1.9.2",
+    "mktemp": "^0.4.0",
+    "react": "^0.13.2",
+    "vcs-clone": "0.0.1"
+  }
+}
