@@ -1,25 +1,23 @@
 BrowserWindow = require 'browser-window'
 {EventEmitter} = require 'events'
 RemoteRepositoryStore = require './RemoteRepositoryStore'
+EventBus = require './EventBus'
 
 instance = new EventEmitter
 windows = {}
-currentID = 0
 
 createWindow = ->
-  currentID++
   window = new BrowserWindow
-    width: 800
+    width: 1200
     height: 600
-  window.id = currentID
   window.loadUrl "file://#{__dirname}/GHCacheViews.html"
   window.on 'close', ->
-    instance.emit 'close', window.id
+    EventBus.emit 'close-window', window
     delete windows[window.id]
-  windows[currentID] = window
+  windows[window.id] = window
+  EventBus.emit 'open-window', window
 
 RemoteRepositoryStore.on 'change', ->
   do createWindow
-  instance.emit 'open', currentID
 
 module.exports = instance

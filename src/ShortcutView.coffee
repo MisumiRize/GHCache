@@ -1,5 +1,15 @@
 globalShortcut = require 'global-shortcut'
-EventBus = require './EventBus'
+BrowserWindow = require 'browser-window'
+
+window = null
 
 globalShortcut.register 'ctrl+g', ->
-  EventBus.emit 'new-remote-repository', 'https://github.com/MisumiRize/vcs-clone'
+  if window
+    do window.show
+  else
+    window = new BrowserWindow
+      width: 400
+      height: 75
+    window.loadUrl "file://#{__dirname}/ShortcutView.html"
+    window.on 'close', ->
+      window = null

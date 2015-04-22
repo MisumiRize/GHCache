@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Input GitHub repository</title>
+    <link rel="stylesheet" href="../node_modules/materialize-css/bin/materialize.css">
+  </head>
+  <body>
+    <input type="text">
+    <script>
+'use strict';
+
+require('coffee-script/register');
+var EventBus = require('remote').require('./src/EventBus');
+
+var input = document.querySelector('input')
+input.addEventListener('keydown', function(event) {
+  if (event.keyCode == 13) {
+    EventBus.emit('new-remote-repository', input.value);
+    input.value = '';
+  }
+});
+    </script>
+  </body>
+</html>
