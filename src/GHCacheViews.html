@@ -7,19 +7,26 @@ html, body, div {
   height: 100%;
 }
 
-#drawer-toggle-label {
-  left: 10px;
+#sync-status {
+  left: 0px;
+  top: 0px;
+  height: 50px;
+  padding-left: 10px;
   display: block;
   position: fixed;
   z-index: 1;
 }
 
-#sync-status {
-  left: 10px;
-  top: 70px;
-  display: block;
-  position: fixed;
-  z-index: 1;
+#webview { position: relative }
+
+#sync-status,
+#webview {
+  left: 150px;
+}
+
+#local-repository-section {
+  position: absolute;
+  width: 150px;
 }
     </style>
   </head>
