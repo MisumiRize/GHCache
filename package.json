@@ -10,6 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "coffee-script": "^1.9.2",
+    "electron-prebuilt": "^0.25.1",
     "materialize-css": "^0.96.1",
     "mktemp": "^0.4.0",
     "react": "^0.13.2",
